@@ -63,8 +63,11 @@ namespace InnoTech.Webshop2021.WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "InnoTech.Webshop2021.WebApi v1"));
                 app.UseCors("dev-policy");
+                //ost
                 ctx.Database.EnsureDeleted();
                 ctx.Database.EnsureCreated();
+                
+                //ostergodt
                 ctx.Products.AddRange(new List<ProductEntity>
                 {
                     new () {Name = "Product1"},
